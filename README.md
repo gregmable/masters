@@ -18,6 +18,43 @@ Features:
 
 ## Run
 
+From Command Prompt or PowerShell (no VS Code required):
+
+```powershell
+cd "h:/VS Studio/masters"
+./run_masters_leaderboard.cmd
+```
+
+You can also pass arguments to the launcher script:
+
+```powershell
+./run_masters_leaderboard.cmd --port 8080 --top 40
+```
+
+## Standalone .exe (no Python required at runtime)
+
+Build the executable once:
+
+```powershell
+cd "h:/VS Studio/masters"
+./.venv/Scripts/python.exe -m pip install pyinstaller
+./.venv/Scripts/python.exe -m PyInstaller --onefile --name masters_leaderboard masters_leaderboard.py
+```
+
+Run the executable directly:
+
+```powershell
+./dist/masters_leaderboard.exe
+```
+
+Or use the helper launcher:
+
+```powershell
+./run_masters_leaderboard_exe.cmd --port 8080 --top 40
+```
+
+Direct Python run (equivalent):
+
 ```powershell
 c:/python313/python.exe "h:/VS Studio/masters/masters_leaderboard.py"
 ```
